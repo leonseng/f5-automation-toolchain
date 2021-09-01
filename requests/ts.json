@@ -1,0 +1,38 @@
+{
+  "class": "Telemetry",
+  "My_System": {
+    "class": "Telemetry_System",
+    "systemPoller": {
+      "interval": 60
+    }
+  },
+  "My_Metric_Consumer": {
+    "class": "Telemetry_Consumer",
+    "type": "Azure_Application_Insights",
+    "instrumentationKey": "'${TS_APP_INSIGHT_INSTRUMENTATION_KEY}'",
+    "maxBatchSize": 125,
+    "maxBatchIntervalMs": 30000,
+    "customOpts": [
+      {
+        "name": "samplingPercentage",
+        "value": 75
+      }
+    ],
+    "useManagedIdentity": false,
+    "region": "australiaeast"
+  },
+  "My_Log_Consumer": {
+    "class": "Telemetry_Consumer",
+    "type": "Azure_Log_Analytics",
+    "workspaceId": "'${TS_LOG_ANALYTICS_WORKSPACE_ID}'",
+    "passphrase": {
+      "cipherText": "'${TS_LOG_ANALYTICS_WORKSPACE_SHARED_KEY}'"
+    },
+    "useManagedIdentity": false,
+    "region": "australiasoutheast"
+  },
+  "My_Listener": {
+    "class": "Telemetry_Listener",
+    "port": 6514
+  }
+}
