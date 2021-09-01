@@ -28,7 +28,7 @@
             {
               "servicePort": 8080,
               "serverAddresses": [
-                "10.1.10.5"
+                "10.1.10.6"
               ]
             }
           ]
