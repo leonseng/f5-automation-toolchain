@@ -31,11 +31,11 @@ curl -X POST -sku $CREDS --data '
     },
     "internal": {
       "class": "VLAN",
-      "tag": 4092,
+      "tag": 4093,
       "mtu": 1500,
       "interfaces": [
         {
-          "name": "1.2",
+          "name": "1.1",
           "tagged": false
         }
       ],
@@ -43,7 +43,7 @@ curl -X POST -sku $CREDS --data '
     },
     "internal-self": {
       "class": "SelfIp",
-      "address": "10.1.10.8/24",
+      "address": "10.1.10.4/24",
       "vlan": "internal",
       "allowService": "default",
       "trafficGroup": "traffic-group-local-only"
@@ -54,7 +54,7 @@ curl -X POST -sku $CREDS --data '
       "mtu": 1500,
       "interfaces": [
         {
-          "name": "1.1",
+          "name": "1.2",
           "tagged": false
         }
       ],
@@ -62,7 +62,7 @@ curl -X POST -sku $CREDS --data '
     },
     "external-self": {
       "class": "SelfIp",
-      "address": "10.1.30.8/24",
+      "address": "10.1.20.4/24",
       "vlan": "external",
       "allowService": "none",
       "trafficGroup": "traffic-group-local-only"
