@@ -14,7 +14,7 @@ curl -v -X POST -sku $CREDS --data "$DATA" https://$IP/mgmt/shared/declarative-o
 # Check status
 
 ```
-sh requests/do-check-status.sh
+while true; do curl -sku $CREDS https://$IP/mgmt/shared/declarative-onboarding | jq .result.status; sleep 1; done
 ```
 
 # Update

@@ -20,7 +20,7 @@ DATA=$(jq \
 curl -X POST -H "Content-Type: application/json" -sku $CREDS --data "$DATA" https://$IP/mgmt/shared/telemetry/declare
 ```
 
-Check F5_virtualServers_/Project_A/PodInfo/podInfo_https_totRequests on App Insight
+Check F5_virtualServers_/Project_A/PodInfo/podinfo_http_clientside.pktsOut on App Insight
 
 # Configure event logging
 

@@ -1,39 +1,43 @@
 # F5 Automation Toolchain Demo
 
+![Topology](./images/atdemo.png)
+
 ## Setup
 
-![Topology](./images/udf-k8s.png)
+- If working on a newly deployed BIG-IP, change the admin password through TMUI
+- On the server:
+  - Start 2 backend services on the server:
+      ```
+      docker run --restart always --name podinfo -dp 9898:9898 stefanprodan/podinfo
+      docker run --restart always --name nginx -dp 8080:80 stenote/nginx-hostname
+      ```
+  - Create `.env` file using [.env.example](./.env.example) as a template.
+  - Load the variables from `.env` into the environment
+      ```
+      source .env
+      ```
 
-On the jumphost, create `.env` file using [.env.example](./.env.example) as template.
+## Declarative Onboarding
 
-Source the variables in `.env` file:
-```
-. .env
-```
-
-If necessary, reset BIG-IP for the demo (note that you'll need a new license key) with the instructions [here](https://support.f5.com/csp/article/K13127)
-
-# Declarative Onboarding
-
-[docs](https://clouddocs.f5.com/products/extensions/f5-declarative-onboarding/latest/using-do.html)
+[User guide](https://clouddocs.f5.com/products/extensions/f5-declarative-onboarding/latest/using-do.html)
 
 [Examples](https://clouddocs.f5.com/products/extensions/f5-declarative-onboarding/latest/examples.html)
 
 [demo](./do-demo.md)
 
-# Application Services 3
+## Application Services 3
 
-[demo](./as3-demo.md)
-
-[User Guide](https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/userguide/)
+[User guide](https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/userguide/)
 
 [Examples](https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/declarations/)
 
-# Telemetry Streaming
+[demo](./as3-demo.md)
 
-[demo](./ts-demo.md)
+## Telemetry Streaming
 
 [User Guide](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/using-ts.html)
+
+[demo](./ts-demo.md)
 
 To enable debugging, add the following to the request JSON
 ```
