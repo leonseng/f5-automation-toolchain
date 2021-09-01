@@ -6,7 +6,18 @@ curl -sku $CREDS https://$IP/mgmt/shared/telemetry/info
 
 # Declare TS
 ```
-curl -X POST -H "Content-Type: application/json" -sku $CREDS --data @requests/ts.json https://$IP/mgmt/shared/telemetry/declare
+DATA=$(jq \
+  --arg a "$TS_APP_INSIGHT_INSTRUMENTATION_KEY" \
+  --arg b "$TS_LOG_ANALYTICS_WORKSPACE_ID" \
+  --arg c "$TS_LOG_ANALYTICS_WORKSPACE_SHARED_KEY" \
+  '
+    .My_Metric_Consumer.instrumentationKey |= $a |
+    .My_Log_Consumer.workspaceId |= $b |
+    .My_Log_Consumer.passphrase.cipherText |= $c
+  ' \
+  requests/ts.json)
+
+curl -X POST -H "Content-Type: application/json" -sku $CREDS --data "$DATA" https://$IP/mgmt/shared/telemetry/declare
 ```
 
 Check F5_virtualServers_/Project_A/PodInfo/podInfo_https_totRequests on App Insight

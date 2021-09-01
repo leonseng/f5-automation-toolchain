@@ -9,7 +9,7 @@
   "My_Metric_Consumer": {
     "class": "Telemetry_Consumer",
     "type": "Azure_Application_Insights",
-    "instrumentationKey": "'${TS_APP_INSIGHT_INSTRUMENTATION_KEY}'",
+    "instrumentationKey": "__TS_APP_INSIGHT_INSTRUMENTATION_KEY__",
     "maxBatchSize": 125,
     "maxBatchIntervalMs": 30000,
     "customOpts": [
@@ -24,9 +24,9 @@
   "My_Log_Consumer": {
     "class": "Telemetry_Consumer",
     "type": "Azure_Log_Analytics",
-    "workspaceId": "'${TS_LOG_ANALYTICS_WORKSPACE_ID}'",
+    "workspaceId": "__TS_LOG_ANALYTICS_WORKSPACE_ID__",
     "passphrase": {
-      "cipherText": "'${TS_LOG_ANALYTICS_WORKSPACE_SHARED_KEY}'"
+      "cipherText": "__TS_LOG_ANALYTICS_WORKSPACE_SHARED_KEY__"
     },
     "useManagedIdentity": false,
     "region": "australiasoutheast"
