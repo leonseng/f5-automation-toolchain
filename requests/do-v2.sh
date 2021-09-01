@@ -71,7 +71,7 @@ curl -X POST -sku $CREDS --data '
       "vlan": "external",
       "allowService": "none",
       "trafficGroup": "traffic-group-local-only"
-    }
+    },
     "Route": {
       "class": "Route",
       "gw": "10.1.10.1",
