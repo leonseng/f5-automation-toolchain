@@ -1,3 +1,4 @@
+curl -X POST -sku $CREDS --data '
 {
   "schemaVersion": "1.0.0",
   "class": "Device",
@@ -67,4 +68,4 @@
       "trafficGroup": "traffic-group-local-only"
     }
   }
-}
+}' https://$IP/mgmt/shared/declarative-onboarding | jq .

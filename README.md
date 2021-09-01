@@ -6,9 +6,9 @@
 
 On the jumphost, create `.env` file using [.env.example](./.env.example) as template.
 
-Load the variables in `.env` file by sourcing it:
+Export the variables in `.env` file:
 ```
-. .env
+export $(cut -d= -f1 .env)
 ```
 
 If necessary, reset BIG-IP for the demo (note that you'll need a new license key) with the instructions [here](https://support.f5.com/csp/article/K13127)

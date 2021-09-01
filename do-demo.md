@@ -4,7 +4,7 @@ curl -sku $CREDS https://$IP/mgmt/shared/declarative-onboarding/info | jq .
 # Onboard
 
 ```
-curl -X POST -sku $CREDS --data @requests/do-v1.json https://$IP/mgmt/shared/declarative-onboarding | jq .
+sh requests/do-v1.sh | jq .
 ```
 
 # Check status
@@ -14,5 +14,5 @@ curl -sku $CREDS https://$IP/mgmt/shared/declarative-onboarding | jq .
 # Update
 
 ```
-curl -X POST -sku $CREDS --data @requests/do-v2.json https://$IP/mgmt/shared/declarative-onboarding
+sh requests/do-v2.sh | jq .
 ```

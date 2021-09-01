@@ -1,3 +1,4 @@
+curl -X POST -sku $CREDS --data '
 {
   "schemaVersion": "1.0.0",
   "class": "Device",
@@ -77,4 +78,4 @@
       "network": "192.168.0.0/16"
     }
   }
-}
+}' https://$IP/mgmt/shared/declarative-onboarding | jq .
