@@ -26,7 +26,6 @@ curl -X POST -sku $CREDS --data '
     "leon": {
       "class": "User",
       "userType": "regular",
-      "shell": "bash",
       "partitionAccess": {
         "all-partitions": {
           "role": "operator"
