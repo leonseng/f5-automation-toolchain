@@ -5,7 +5,7 @@ curl -sku $CREDS https://$IP/mgmt/shared/appsvcs/info
 # Create declaration
 
 ```
-curl -X POST -kvu $CREDS --data @requests/projectA-v1.json https://$IP/mgmt/shared/appsvcs/declare
+curl -X POST -kvu $CREDS --data @requests/as3-projectA-v1.json https://$IP/mgmt/shared/appsvcs/declare
 ```
 
 # Get declaration
@@ -16,19 +16,19 @@ curl -sku $CREDS https://$IP/mgmt/shared/appsvcs/declare/Project_A
 
 Create another service by posting entire declaration
 ```
-curl -X POST -sku $CREDS --data @requests/projectA-v2.json https://$IP/mgmt/shared/appsvcs/declare
+curl -X POST -sku $CREDS --data @requests/as3-projectA-v2.json https://$IP/mgmt/shared/appsvcs/declare
 ```
 
 # Delete service
 
 Removed `podinfo_https` just by reapplying the original declaration
 ```
-curl -X POST -sku $CREDS --data @requests/projectA-v1.json https://$IP/mgmt/shared/appsvcs/declare
+curl -X POST -sku $CREDS --data @requests/as3-projectA-v1.json https://$IP/mgmt/shared/appsvcs/declare
 ```
 
 # Add new tenant Create another application in a new tenant
 ```
-curl -X POST -sku $CREDS --data @requests/projectB-v1.json https://$IP/mgmt/shared/appsvcs/declare
+curl -X POST -sku $CREDS --data @requests/as3-projectB-v1.json https://$IP/mgmt/shared/appsvcs/declare
 ```
 
 # Delete tenant
