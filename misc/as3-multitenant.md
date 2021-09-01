@@ -25,7 +25,7 @@ curl -X POST -kvu $CREDS --data '
           "members": [{
               "servicePort": 9898,
               "serverAddresses": [
-                "10.1.10.150"
+                "10.1.10.5"
               ]
             }
           ]
@@ -39,7 +39,7 @@ curl -X POST -kvu $CREDS --data '
         "podinfo_http": {
           "class": "Service_HTTP",
           "virtualAddresses": [
-            "10.1.30.100"
+            "10.1.20.100"
           ],
           "pool": "/Common/Shared/podinfo_pool"
         }
@@ -52,7 +52,7 @@ curl -X POST -kvu $CREDS --data '
         "podinfo_http": {
           "class": "Service_HTTP",
           "virtualAddresses": [
-            "10.1.30.101"
+            "10.1.20.101"
           ],
           "pool": "/Common/Shared/podinfo_pool"
         }
@@ -90,7 +90,7 @@ curl -X POST -kvu $CREDS --data '
           "members": [{
               "servicePort": 9898,
               "serverAddresses": [
-                "10.1.10.150"
+                "10.1.10.5"
               ]
             }
           ]
@@ -104,7 +104,7 @@ curl -X POST -kvu $CREDS --data '
         "podinfo_http": {
           "class": "Service_HTTP",
           "virtualAddresses": [
-            "10.1.30.102"
+            "10.1.20.102"
           ],
           "pool": "/Common/Shared/podinfo_pool"
         }
@@ -142,7 +142,7 @@ curl -X POST -kvu $CREDS --data '
               "members": [{
                   "servicePort": 9898,
                   "serverAddresses": [
-                    "10.1.10.150"
+                    "10.1.10.5"
                   ]
                 }
               ]
@@ -159,7 +159,7 @@ curl -X POST -kvu $CREDS --data '
             "podinfo_http": {
               "class": "Service_HTTP",
               "virtualAddresses": [
-                "10.1.30.101"
+                "10.1.20.101"
               ],
               "pool": "/Common/Shared/podinfo_pool"
             }

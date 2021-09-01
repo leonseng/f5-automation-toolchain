@@ -15,7 +15,7 @@
         "nginx_http": {
           "class": "Service_HTTP",
           "virtualAddresses": [
-            "10.1.30.200"
+            "10.1.20.200"
           ],
           "pool": "nginx_pool"
         },
@@ -28,7 +28,7 @@
             {
               "servicePort": 8080,
               "serverAddresses": [
-                "10.1.10.151"
+                "10.1.10.5"
               ]
             }
           ]

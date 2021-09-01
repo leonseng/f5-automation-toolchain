@@ -21,7 +21,7 @@
             {
               "servicePort": 9898,
               "serverAddresses": [
-                "10.1.10.150"
+                "10.1.10.5"
               ]
             }
           ]
@@ -29,7 +29,7 @@
         "podinfo_http": {
           "class": "Service_HTTP",
           "virtualAddresses": [
-            "10.1.30.100"
+            "10.1.20.100"
           ],
           "iRules": [
             {
@@ -40,7 +40,7 @@
         "podInfo_https": {
           "class": "Service_HTTPS",
           "virtualAddresses": [
-            "10.1.30.100"
+            "10.1.20.100"
           ],
           "pool": "podinfo_pool",
           "redirect80": false,
