@@ -13,7 +13,7 @@ sh requests/do-v1.sh | jq .
 # Check status
 
 ```
-sh do-check-status.sh
+sh requests/do-check-status.sh
 ```
 
 # Update
