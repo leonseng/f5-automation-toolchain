@@ -29,7 +29,7 @@ curl -X POST -sku $CREDS --data '
       "shell": "bash",
       "partitionAccess": {
         "all-partitions": {
-          "role": "admin"
+          "role": "operator"
         }
       }
     },
