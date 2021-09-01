@@ -34,7 +34,7 @@ curl -X POST -sku $CREDS --data '
       "afm": "nominal",
       "apm": "nominal"
     },
-    "dmz": {
+    "internal": {
       "class": "VLAN",
       "tag": 4093,
       "mtu": 1500,
@@ -46,10 +46,10 @@ curl -X POST -sku $CREDS --data '
       ],
       "cmpHash": "dst-ip"
     },
-    "dmz-self": {
+    "internal-self": {
       "class": "SelfIp",
       "address": "10.1.10.8/24",
-      "vlan": "dmz",
+      "vlan": "internal",
       "allowService": "default",
       "trafficGroup": "traffic-group-local-only"
     },
