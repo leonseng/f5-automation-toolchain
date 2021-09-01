@@ -7,7 +7,8 @@ curl -sku $CREDS https://$IP/mgmt/shared/declarative-onboarding/info | jq .
 # Onboard
 
 ```
-sh requests/do-v1.sh | jq .
+DATA=$(jq --arg key "$LICENSE_KEY" '.Common.myLicense.regKey |= $key' requests/do-v1.json)
+curl -v -X POST -sku $CREDS --data "$DATA" https://$IP/mgmt/shared/declarative-onboarding
 ```
 
 # Check status
