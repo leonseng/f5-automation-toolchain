@@ -6,6 +6,10 @@
       "interval": 60
     }
   },
+  "My_Listener": {
+    "class": "Telemetry_Listener",
+    "port": 6514
+  },
   "My_Metric_Consumer": {
     "class": "Telemetry_Consumer",
     "type": "Azure_Application_Insights",
@@ -30,9 +34,5 @@
     },
     "useManagedIdentity": false,
     "region": "australiasoutheast"
-  },
-  "My_Listener": {
-    "class": "Telemetry_Listener",
-    "port": 6514
   }
 }

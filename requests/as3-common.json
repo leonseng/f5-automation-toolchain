@@ -20,7 +20,7 @@
           "remark": "Only required when TS is a local listener",
           "class": "Service_TCP",
           "virtualAddresses": [
-            "10.1.1.8"
+            "10.1.1.4"
           ],
           "virtualPort": 6514,
           "iRules": [
@@ -33,7 +33,7 @@
             {
               "enable": true,
               "serverAddresses": [
-                "10.1.1.8"
+                "10.1.1.4"
               ],
               "servicePort": 6514
             }
