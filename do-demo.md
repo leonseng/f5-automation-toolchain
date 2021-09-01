@@ -13,7 +13,7 @@ sh requests/do-v1.sh | jq .
 # Check status
 
 ```
-while true; do curl -sku $CREDS https://$IP/mgmt/shared/declarative-onboarding | jq .result.status; sleep 1; done
+sh do-check-status.sh
 ```
 
 # Update
