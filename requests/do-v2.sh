@@ -28,7 +28,7 @@ curl -X POST -sku $CREDS --data '
       "userType": "regular",
       "shell": "bash",
       "partitionAccess": {
-        "Common": {
+        "all-partitions": {
           "role": "admin"
         }
       }
