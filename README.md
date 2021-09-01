@@ -17,6 +17,8 @@ If necessary, reset BIG-IP for the demo (note that you'll need a new license key
 
 [docs](https://clouddocs.f5.com/products/extensions/f5-declarative-onboarding/latest/using-do.html)
 
+[Examples](https://clouddocs.f5.com/products/extensions/f5-declarative-onboarding/latest/examples.html)
+
 [demo](./do-demo.md)
 
 # Application Services 3

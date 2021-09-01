@@ -23,6 +23,11 @@ curl -X POST -sku $CREDS --data '
       "userType": "regular",
       "shell": "bash"
     },
+    "leon": {
+      "class": "User",
+      "userType": "regular",
+      "shell": "bash"
+    },
     "myProvisioning": {
       "class": "Provision",
       "ltm": "nominal",
