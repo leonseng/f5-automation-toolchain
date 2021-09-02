@@ -15,7 +15,7 @@
     "myLicense": {
       "class": "License",
       "licenseType": "regKey",
-      "regKey": "'${LICENSE_KEY}'"
+      "regKey": "__LICENSE_KEY__"
     },
     "admin": {
       "class": "User",

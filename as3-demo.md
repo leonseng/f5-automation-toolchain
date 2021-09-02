@@ -5,7 +5,7 @@ curl -sku $CREDS https://$IP/mgmt/shared/appsvcs/info
 # Create declaration
 
 ```
-curl -X POST -kvu $CREDS --data @requests/as3-projectA-v1.json https://$IP/mgmt/shared/appsvcs/declare
+curl -X POST -sku $CREDS --data @requests/as3-projectA-v1.json https://$IP/mgmt/shared/appsvcs/declare
 ```
 
 # Get declaration
