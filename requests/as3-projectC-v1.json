@@ -17,7 +17,10 @@
           "virtualAddresses": [
             "10.1.20.220"
           ],
-          "pool": "nginx_pool"
+          "pool": "nginx_pool",
+          "profileTrafficLog": {
+            "use": "/Common/Shared/telemetry_traffic_log_profile"
+          }
         },
         "nginx_pool": {
           "class": "Pool",
