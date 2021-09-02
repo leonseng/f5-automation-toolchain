@@ -39,3 +39,9 @@ curl -X DELETE -sku $CREDS https://$IP/mgmt/shared/appsvcs/declare/Project_B
 ```
 
 
+# Clean up
+
+```
+curl -X DELETE -sku $CREDS https://$IP/mgmt/shared/appsvcs/declare/Project_A
+curl -X DELETE -sku $CREDS https://$IP/mgmt/shared/appsvcs/declare/Project_B
+```

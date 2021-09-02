@@ -33,3 +33,11 @@ Configure logging profile on application
 ```
 curl -X POST -sku $CREDS --data @requests/as3-projectA-v3.json https://$IP/mgmt/shared/appsvcs/declare
 ```
+
+# Clean up
+
+```
+curl -X DELETE -sku $CREDS https://$IP/mgmt/shared/appsvcs/declare/Common
+curl -X DELETE -sku $CREDS https://$IP/mgmt/shared/appsvcs/declare/Project_A
+curl -X POST -H "Content-Type: application/json" -sku $CREDS --data '{"class": "Telemetry"}' https://$IP/mgmt/shared/telemetry/declare
+```
