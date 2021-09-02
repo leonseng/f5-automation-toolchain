@@ -4,11 +4,9 @@
   "persist": true,
   "declaration": {
     "class": "ADC",
-    "schemaVersion": "3.0.0",
-    "id": "example-declaration-01",
-    "label": "Sample 1",
-    "remark": "Simple HTTP application with round robin pool",
-    "Project_B": {
+    "schemaVersion": "3.10.0",
+    "remark": "Example depicting creation of BIG-IP module log profiles",
+    "Project_C": {
       "class": "Tenant",
       "Nginx": {
         "class": "Application",
@@ -31,7 +29,7 @@
             {
               "servicePort": 8081,
               "serverAddresses": [
-                "10.1.10.6"
+                "10.1.10.7"
               ]
             }
           ]
