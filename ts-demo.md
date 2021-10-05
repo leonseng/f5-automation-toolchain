@@ -21,8 +21,8 @@ curl -X POST -H "Content-Type: application/json" -sku $CREDS --data "$DATA" http
 ```
 
 Check
-- F5_virtualServers_/Project_A/PodInfo/podinfo_http_clientside.pktsOut
-- F5_pools_/Project_A/PodInfo/podinfo_pool_members_/Project_A/10.1.10.5:9898_totRequests
+- F5_virtualServers_/Project_C/Nginx/nginx_http_clientside.pktsOut
+- F5_pools_/Project_C/Nginx/nginx_pool_totRequests
 
 # Configure event logging
 
