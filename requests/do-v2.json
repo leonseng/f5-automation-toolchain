@@ -22,20 +22,12 @@
       "userType": "regular",
       "shell": "bash"
     },
-    "leon": {
-      "class": "User",
-      "userType": "regular",
-      "partitionAccess": {
-        "all-partitions": {
-          "role": "operator"
-        }
-      }
-    },
     "myProvisioning": {
       "class": "Provision",
       "ltm": "nominal",
       "afm": "nominal",
-      "apm": "nominal"
+      "apm": "nominal",
+      "gtm": "nominal"
     },
     "internal": {
       "class": "VLAN",
@@ -51,7 +43,7 @@
     },
     "internal-self": {
       "class": "SelfIp",
-      "address": "10.1.10.4/24",
+      "address": "10.1.10.__HOST_ID__/24",
       "vlan": "internal",
       "allowService": "default",
       "trafficGroup": "traffic-group-local-only"
@@ -70,12 +62,17 @@
     },
     "external-self": {
       "class": "SelfIp",
-      "address": "10.1.20.4/24",
+      "address": "10.1.20.__HOST_ID__/24",
       "vlan": "external",
       "allowService": "none",
       "trafficGroup": "traffic-group-local-only"
     },
-    "Route": {
+    "default": {
+      "class": "Route",
+      "gw": "10.1.10.1",
+      "network": "0.0.0.0/0"
+    },
+    "some_route": {
       "class": "Route",
       "gw": "10.1.10.1",
       "network": "192.168.0.0/16"
