@@ -7,10 +7,11 @@ curl -sku $CREDS https://$IP/mgmt/shared/declarative-onboarding/info | jq .
 # Onboard
 
 ```
-DATA=$(jq --arg key "$LICENSE_KEY" '.Common.myLicense.regKey \
-  --arg key "$INTERNAL_IP" '.Common.internal-self.address \
-  --arg key "$EXTERNAL_IP" '.Common.external-self.address \
-  |= $key' requests/do-v1.json)
+DATA=$(jq --arg key "$LICENSE_KEY" \
+  --arg int_ip "$INTERNAL_IP" \
+  --arg ext_ip "$EXTERNAL_IP" \
+  '.Common.myLicense.regKey |= $key | .Common."internal-self".address |= $int_ip | .Common."external-self".address |= $ext_ip' \
+  requests/do-v1.json)
 curl -X POST -sku $CREDS --data "$DATA" https://$IP/mgmt/shared/declarative-onboarding
 ```
 
