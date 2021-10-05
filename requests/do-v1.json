@@ -7,7 +7,7 @@
     "class": "Tenant",
     "mySystem": {
       "class": "System",
-      "hostname": "bigip.example.com",
+      "hostname": "__HOSTNAME__",
       "cliInactivityTimeout": 1200,
       "consoleInactivityTimeout": 1200,
       "autoPhonehome": false
