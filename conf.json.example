@@ -1,0 +1,21 @@
+{
+  "ip": "10.1.1.4"
+  "hostname": "bigip.com",
+  "root_password": "default",
+  "admin_password": "admin",
+  "license_key": "valid_license_key",
+  "internal_ip": "10.1.10.4/24",
+  "external_ip": "10.1.20.4/24",
+  "default_gateway": "10.1.10.1",
+  "cluster": {
+    "failover_group_members": [
+      "10.1.10.4",
+      "10.1.10.9"
+    ]
+  }
+  "ts": {
+    "app_insight_instrumentation_key": "key",
+    "log_analytics_workspace_id": "id",
+    "log_analytics_workspace_shared_key": "key"
+  }
+}

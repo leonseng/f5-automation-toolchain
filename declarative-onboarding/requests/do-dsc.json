@@ -1,0 +1,111 @@
+{
+  "schemaVersion": "1.0.0",
+  "class": "Device",
+  "async": true,
+  "label": "my BIG-IP declaration for declarative onboarding",
+  "Common": {
+    "class": "Tenant",
+    "mySystem": {
+      "class": "System",
+      "hostname": "__HOSTNAME__",
+      "cliInactivityTimeout": 1200,
+      "consoleInactivityTimeout": 1200,
+      "autoPhonehome": false
+    },
+    "myLicense": {
+      "class": "License",
+      "licenseType": "regKey",
+      "regKey": "__LICENSE_KEY__"
+    },
+    "admin": {
+      "class": "User",
+      "userType": "regular",
+      "shell": "bash"
+    },
+    "myProvisioning": {
+      "class": "Provision",
+      "ltm": "nominal",
+      "afm": "nominal",
+      "apm": "nominal",
+      "gtm": "nominal"
+    },
+    "internal": {
+      "class": "VLAN",
+      "tag": 4093,
+      "mtu": 1500,
+      "interfaces": [
+        {
+          "name": "1.1",
+          "tagged": false
+        }
+      ],
+      "cmpHash": "dst-ip"
+    },
+    "internal-self": {
+      "class": "SelfIp",
+      "address": "__INTERNAL_IP__",
+      "vlan": "internal",
+      "allowService": "default",
+      "trafficGroup": "traffic-group-local-only"
+    },
+    "external": {
+      "class": "VLAN",
+      "tag": 4094,
+      "mtu": 1500,
+      "interfaces": [
+        {
+          "name": "1.2",
+          "tagged": false
+        }
+      ],
+      "cmpHash": "src-ip"
+    },
+    "external-self": {
+      "class": "SelfIp",
+      "address": "__EXTERNAL_IP__",
+      "vlan": "external",
+      "allowService": "none",
+      "trafficGroup": "traffic-group-local-only"
+    },
+    "default": {
+      "class": "Route",
+      "gw": "__DEFAULT_GATEWAY__",
+      "network": "0.0.0.0/0"
+    },
+    "configsync": {
+      "class": "ConfigSync",
+      "configsyncIp": "/Common/internal-self/address"
+    },
+    "failoverAddress": {
+      "class": "FailoverUnicast",
+      "address": "/Common/internal-self/address"
+    },
+    "failoverGroup": {
+      "class": "DeviceGroup",
+      "type": "sync-failover",
+      "members": "__FAILOVER_GROUP_MEMBERS__",
+      "owner": "/Common/failoverGroup/members/0",
+      "autoSync": true,
+      "saveOnAutoSync": false,
+      "networkFailover": true,
+      "fullLoadOnSync": false,
+      "asmSync": false
+    },
+    "trafGroup": {
+      "class": "TrafficGroup",
+      "autoFailbackEnabled": false,
+      "autoFailbackTime": 50,
+      "failoverMethod": "ha-order",
+      "haLoadFactor": 1,
+      "haOrder": "__FAILOVER_GROUP_MEMBERS__"
+    },
+    "trust": {
+      "class": "DeviceTrust",
+      "localUsername": "admin",
+      "localPassword": "__ADMIN_PASSWORD__",
+      "remoteHost": "/Common/failoverGroup/members/0",
+      "remoteUsername": "admin",
+      "remotePassword": "__ADMIN_PASSWORD__"
+    }
+  }
+}
