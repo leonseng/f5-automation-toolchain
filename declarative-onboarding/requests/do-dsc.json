@@ -74,11 +74,11 @@
     },
     "configsync": {
       "class": "ConfigSync",
-      "configsyncIp": "__MGMT_IP__"
+      "configsyncIp": "__INTERNAL_IP__"
     },
     "failoverAddress": {
       "class": "FailoverUnicast",
-      "address": "__MGMT_IP__"
+      "address": "__INTERNAL_IP__"
     },
     "failoverGroup": {
       "class": "DeviceGroup",
