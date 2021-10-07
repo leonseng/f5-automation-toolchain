@@ -14,7 +14,6 @@ DATA=$(jq --slurpfile c $CONF_FILE '
   .Common."external-self".address |= $c[0].external_ip |
   .Common.default.gw |= $c[0].default_gateway |
   .Common.failoverGroup.members |= $c[0].cluster.failover_group_members |
-  .Common.trafGroup.haOrder |= $c[0].cluster.failover_group_members |
   .Common.trust.localPassword |= $c[0].admin_password |
   .Common.trust.remotePassword |= $c[0].admin_password
   ' declarative-onboarding/requests/do-dsc.json)

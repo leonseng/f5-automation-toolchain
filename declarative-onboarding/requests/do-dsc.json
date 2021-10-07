@@ -97,7 +97,10 @@
       "autoFailbackTime": 50,
       "failoverMethod": "ha-order",
       "haLoadFactor": 1,
-      "haOrder": "__FAILOVER_GROUP_MEMBERS__"
+      "haOrder": [
+        "bigip-a.local",
+        "bigip-b.local"
+      ]
     },
     "trust": {
       "class": "DeviceTrust",
