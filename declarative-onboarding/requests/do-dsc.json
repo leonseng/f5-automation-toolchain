@@ -7,7 +7,7 @@
     "class": "Tenant",
     "mySystem": {
       "class": "System",
-      "hostname": "bigip.example.com",
+      "hostname": "__HOSTNAME__",
       "cliInactivityTimeout": 1200,
       "consoleInactivityTimeout": 1200,
       "autoPhonehome": false
@@ -22,20 +22,12 @@
       "userType": "regular",
       "shell": "bash"
     },
-    "leon": {
-      "class": "User",
-      "userType": "regular",
-      "partitionAccess": {
-        "all-partitions": {
-          "role": "guest"
-        }
-      }
-    },
     "myProvisioning": {
       "class": "Provision",
       "ltm": "nominal",
       "afm": "nominal",
-      "apm": "nominal"
+      "apm": "nominal",
+      "gtm": "nominal"
     },
     "internal": {
       "class": "VLAN",
@@ -51,7 +43,7 @@
     },
     "internal-self": {
       "class": "SelfIp",
-      "address": "10.1.10.4/24",
+      "address": "__INTERNAL_IP__",
       "vlan": "internal",
       "allowService": "default",
       "trafficGroup": "traffic-group-local-only"
@@ -70,10 +62,42 @@
     },
     "external-self": {
       "class": "SelfIp",
-      "address": "10.1.20.4/24",
+      "address": "__EXTERNAL_IP__",
       "vlan": "external",
       "allowService": "none",
       "trafficGroup": "traffic-group-local-only"
+    },
+    "default": {
+      "class": "Route",
+      "gw": "__DEFAULT_GATEWAY__",
+      "network": "0.0.0.0/0"
+    },
+    "configsync": {
+      "class": "ConfigSync",
+      "configsyncIp": "/Common/internal-self/address"
+    },
+    "failoverAddress": {
+      "class": "FailoverUnicast",
+      "address": "/Common/internal-self/address"
+    },
+    "failoverGroup": {
+      "class": "DeviceGroup",
+      "type": "sync-failover",
+      "members": "__FAILOVER_GROUP_MEMBERS__",
+      "owner": "/Common/failoverGroup/members/0",
+      "autoSync": true,
+      "saveOnAutoSync": false,
+      "networkFailover": true,
+      "fullLoadOnSync": false,
+      "asmSync": false
+    },
+    "trust": {
+      "class": "DeviceTrust",
+      "localUsername": "admin",
+      "localPassword": "__ADMIN_PASSWORD__",
+      "remoteHost": "/Common/failoverGroup/members/0",
+      "remoteUsername": "admin",
+      "remotePassword": "__ADMIN_PASSWORD__"
     }
   }
 }

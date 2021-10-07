@@ -11,7 +11,7 @@
       docker run --restart always --name podinfo -dp 9898:9898 stefanprodan/podinfo
       docker run --restart always --name nginx -dp 8080:80 stenote/nginx-hostname
       ```
-  - Create `.env` file using [.env.example](./.env.example) as a template.
+  - Create `config.json` file using [config.json.example](./config.json.example) as a template.
   - Load the variables from `.env` into the environment
       ```
       source .env
